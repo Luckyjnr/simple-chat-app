@@ -2,20 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mini Chat App</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    #messages { list-style-type: none; padding: 0; }
-    #messages li { margin: 5px 0; padding: 8px; background: #f2f2f2; border-radius: 5px; }
-  </style>
+  <title>Room Chat App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>Mini Real-Time Chat</h2>
-  <ul id="messages"></ul>
-  <form id="chatForm">
-    <input id="msgInput" autocomplete="off" placeholder="Type a message..." />
-    <button>Send</button>
-  </form>
+  <div id="join-screen">
+    <h2>Join Chat</h2>
+    <input id="username" placeholder="Enter your name" />
+    <select id="room">
+      <option value="General">General</option>
+      <option value="Sports">Sports</option>
+      <option value="Tech">Tech</option>
+    </select>
+    <button id="joinBtn">Join</button>
+  </div>
+
+  <div id="chat-screen" style="display:none;">
+    <h2 id="roomName"></h2>
+    <div class="chat-container">
+      <div class="chat-box">
+        <ul id="messages"></ul>
+        <form id="chatForm">
+          <input id="msgInput" placeholder="Type a message..." autocomplete="off" />
+          <button>Send</button>
+        </form>
+      </div>
+      <div class="user-list">
+        <h3>Users</h3>
+        <ul id="users"></ul>
+      </div>
+    </div>
+  </div>
 
   <script src="/socket.io/socket.io.js"></script>
   <script src="client.js"></script>

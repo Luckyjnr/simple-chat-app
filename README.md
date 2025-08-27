@@ -1,20 +1,26 @@
 
-# 🗨️ Simple Chat App
+```md
+# 🗨️ Simple Chat App – Rooms & User List
 
 ## 📌 Description
-A **mini real-time chat application** built with **Node.js**, **Express**, and **Socket.IO**.  
-This project demonstrates the basics of real-time communication where multiple users can connect to a server and exchange messages instantly.  
+A **real-time chat application** built with **Node.js**, **Express**, and **Socket.IO**.  
+This version extends the mini chat app into a **room-based system** where users can:
 
-It’s the foundational version of a larger chat system — focused only on message broadcasting across all connected clients.
+- Enter a username
+- Join specific rooms (General, Sports, Tech)
+- Send and receive messages instantly with others in the same room
+- See who is currently online in their room
+- Get notifications when someone joins or leaves
 
 ---
 
 ## ✨ Features
-- Real-time messaging using **Socket.IO**.
-- Simple UI with an input field and message list.
-- Broadcast messages to all connected clients instantly.
-- Lightweight setup — no database or user accounts (yet).
-- Built for learning Socket.IO basics.
+- Real-time messaging with **Socket.IO**
+- Create and join rooms dynamically
+- Broadcast join/leave events within a room
+- Display a live user list per room
+- Basic styling for messages, chat box, and user list
+- Lightweight (no database required)
 
 ---
 
@@ -25,8 +31,9 @@ simple-chat-app/
 │── server.js          # Express + Socket.IO server
 │── package.json
 └── public/
-├── index.html     # Frontend UI
-└── client.js      # Socket.IO client-side logic
+├── index.html     # Frontend with room + username selection
+├── client.js      # Client-side Socket.IO logic
+└── style.css      # Styling for chat box and user list
 
 ````
 
@@ -47,11 +54,20 @@ npm install
 node server.js
 ````
 
-Now open your browser and visit:
+Open your browser and visit:
 👉 [http://localhost:3000](http://localhost:3000)
 
-Open **two tabs** to test real-time chat between them.
+---
 
+## 💬 How to Use
+
+1. Enter a **username** in the join screen.
+2. Select a **room** (General, Sports, or Tech).
+3. Start chatting with others in the same room!
+4. When new users join or leave, all room members get a notification.
+5. The **user list** updates in real time.
+
+---
 
 ## 🛠️ Technologies Used
 
@@ -61,8 +77,15 @@ Open **two tabs** to test real-time chat between them.
 
 ---
 
+## 🗺️ Next Steps (Optional Enhancements)
+
+* Add private messaging (DMs)
+* Persist chat history with a database (MongoDB)
+* Improve UI/UX with modern frontend framework (React, Vue)
+* Deploy to Heroku/Render for live testing
+
+---
+
 ## 👨‍💻 Author
 
 **Noah Lucky**
-
-```
